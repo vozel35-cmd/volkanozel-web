@@ -671,6 +671,18 @@
       <div id="blog-container" class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
         <!-- JS ile doldurulacak -->
       </div>
+      <!-- posts.json İÇERİĞİNİN DİNAMİK YÜKLENDİĞİ IZGARA -->
+      <div id="blog-container" class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+        <!-- JS ile doldurulacak -->
+      </div>
+
+      <!-- DAHA FAZLA GÖSTER BUTONU -->
+      <div id="load-more-wrapper" class="mt-12 text-center hidden">
+        <button id="load-more-btn" onclick="showMorePosts()" class="inline-flex items-center gap-2.5 px-8 py-3.5 rounded-full bg-white border border-slate-200 text-executive-900 font-bold text-xs uppercase tracking-wider hover:border-crimson hover:text-crimson hover:shadow-lg transition-all">
+          <span>Daha Fazla Göster</span>
+          <i data-lucide="chevron-down" class="w-4 h-4"></i>
+        </button>
+      </div>
 
     </div>
   </section>
@@ -937,61 +949,86 @@
       }
     });
 
-    // ================= POSTS.JSON VERİ ÇEKME FONKSİYONU =================
+// ================= POSTS.JSON YÖNETİMİ (MOBİL 3 / WEB 6 LİMİTİ) =================
+    let allPosts = [];
+    let visibleCount = 0;
+    const stepSize = window.innerWidth < 768 ? 3 : 6;
+
     async function loadPosts() {
       try {
         const response = await fetch('posts.json');
-        const posts = await response.json();
-        const container = document.getElementById('blog-container');
-        container.innerHTML = '';
-
-        posts.forEach((post, index) => {
-          const card = document.createElement('article');
-          card.className = 'bg-white rounded-3xl border border-slate-200/90 shadow-sm hover:shadow-xl hover:border-crimson/40 transition-all flex flex-col justify-between overflow-hidden group';
-          card.setAttribute('data-aos', 'fade-up');
-          card.setAttribute('data-aos-delay', (index * 100).toString());
-
-          card.innerHTML = `
-            <div>
-              <div class="aspect-video w-full overflow-hidden bg-slate-100 relative">
-                <img src="${post.image}" alt="${post.title}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
-                <span class="absolute top-4 left-4 px-3 py-1 rounded-full bg-white/90 backdrop-blur-md text-executive-900 font-bold text-[11px] shadow-sm">
-                  ${post.category}
-                </span>
-              </div>
-
-              <div class="p-6 sm:p-7 space-y-3">
-                <div class="flex items-center justify-between text-xs text-slate-400">
-                  <span>${post.date}</span>
-                  <span>${post.readTime} okuma</span>
-                </div>
-
-                <h3 class="text-xl font-display font-bold text-executive-900 group-hover:text-crimson transition-colors leading-snug">
-                  ${post.title}
-                </h3>
-                
-                <p class="text-xs sm:text-sm text-executive-600 leading-relaxed line-clamp-3">
-                  ${post.summary}
-                </p>
-              </div>
-            </div>
-
-            <div class="px-6 sm:px-7 py-4 bg-slate-50/60 border-t border-slate-100 flex items-center justify-between">
-              <a href="${post.linkedinUrl}" target="_blank" rel="noopener" class="text-xs font-bold text-linkedin hover:text-linkedin-hover flex items-center gap-1.5 transition-colors">
-                <svg class="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.762-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
-                LinkedIn'de Oku & Tartış
-              </a>
-              <i data-lucide="arrow-right" class="w-4 h-4 text-slate-400 group-hover:text-crimson group-hover:translate-x-1 transition-all"></i>
-            </div>
-          `;
-          container.appendChild(card);
-        });
-
-        lucide.createIcons();
+        allPosts = await response.json();
+        visibleCount = stepSize;
+        renderPosts();
       } catch (err) {
         console.error('Yazılar yüklenirken hata oluştu:', err);
       }
     }
+
+    function renderPosts() {
+      const container = document.getElementById('blog-container');
+      const loadMoreWrapper = document.getElementById('load-more-wrapper');
+      container.innerHTML = '';
+
+      const postsToDisplay = allPosts.slice(0, visibleCount);
+
+      postsToDisplay.forEach((post, index) => {
+        const card = document.createElement('article');
+        card.className = 'bg-white rounded-3xl border border-slate-200/90 shadow-sm hover:shadow-xl hover:border-crimson/40 transition-all flex flex-col justify-between overflow-hidden group';
+        card.setAttribute('data-aos', 'fade-up');
+        card.setAttribute('data-aos-delay', ((index % stepSize) * 100).toString());
+
+        card.innerHTML = `
+          <div>
+            <div class="aspect-video w-full overflow-hidden bg-slate-100 relative">
+              <img src="${post.image}" alt="${post.title}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+              <span class="absolute top-4 left-4 px-3 py-1 rounded-full bg-white/90 backdrop-blur-md text-executive-900 font-bold text-[11px] shadow-sm">
+                ${post.category}
+              </span>
+            </div>
+
+            <div class="p-6 sm:p-7 space-y-3">
+              <div class="flex items-center justify-between text-xs text-slate-400">
+                <span>${post.date}</span>
+                <span>${post.readTime} okuma</span>
+              </div>
+
+              <h3 class="text-xl font-display font-bold text-executive-900 group-hover:text-crimson transition-colors leading-snug">
+                ${post.title}
+              </h3>
+              
+              <p class="text-xs sm:text-sm text-executive-600 leading-relaxed line-clamp-3">
+                ${post.summary}
+              </p>
+            </div>
+          </div>
+
+          <div class="px-6 sm:px-7 py-4 bg-slate-50/60 border-t border-slate-100 flex items-center justify-between">
+            <a href="${post.linkedinUrl}" target="_blank" rel="noopener" class="text-xs font-bold text-linkedin hover:text-linkedin-hover flex items-center gap-1.5 transition-colors">
+              <svg class="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.762-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+              LinkedIn'de Oku & Tartış
+            </a>
+            <i data-lucide="arrow-right" class="w-4 h-4 text-slate-400 group-hover:text-crimson group-hover:translate-x-1 transition-all"></i>
+          </div>
+        `;
+        container.appendChild(card);
+      });
+
+      // Daha gösterilecek yazı varsa butonu aç, bittiyse gizle
+      if (allPosts.length > visibleCount) {
+        loadMoreWrapper.classList.remove('hidden');
+      } else {
+        loadMoreWrapper.classList.add('hidden');
+      }
+
+      lucide.createIcons();
+    }
+
+    function showMorePosts() {
+      visibleCount += stepSize;
+      renderPosts();
+    }
+
     loadPosts();
 
     // CV MODAL VERİTABANI
