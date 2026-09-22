@@ -715,7 +715,14 @@
           LinkedIn Bağlantısı
         </a>
       </div>
-
+<div class="mt-6">
+        <button onclick="openCvModal()" class="px-5 py-2.5 bg-red-600 hover:bg-red-700 text-white rounded-xl font-medium text-sm transition shadow-sm inline-flex items-center gap-2">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+            </svg>
+            Özgeçmişi İndir
+        </button>
+    </div>
       <div class="pt-8 flex flex-wrap items-center justify-center gap-3 text-xs text-slate-500 font-medium">
         <span class="flex items-center gap-1.5"><i data-lucide="map-pin" class="w-4 h-4 text-crimson"></i> İzmir, Türkiye</span>
         <span class="w-1.5 h-1.5 rounded-full bg-slate-300"></span>
@@ -784,7 +791,64 @@
   <script>
     AOS.init({ duration: 800, once: true, easing: 'ease-out-cubic' });
     lucide.createIcons();
+function openCvModal() {
+  document.getElementById('cvModal').classList.remove('hidden');
+}
 
+function closeCvModal() {
+  document.getElementById('cvModal').classList.add('hidden');
+}
+
+async function handleCvSubmit(e) {
+  e.preventDefault();
+  const btn = document.getElementById('cvSubmitBtn');
+  btn.innerText = 'İndiriliyor...';
+  btn.disabled = true;
+
+  const adSoyad = document.getElementById('cvName').value;
+  const sirket = document.getElementById('cvCompany').value;
+  const telefon = document.getElementById('cvPhone').value;
+
+  const BOT_TOKEN = '8632468912:AAEk7eV5Dotsc0O6WBpYK5D9WWR8XuAn-3I';
+  const CHAT_ID = '8827820333';
+
+  const mesaj = `🚨 *Yeni CV İndirildi!* 🚨\n\n` +
+                `👤 *İsim:* ${adSoyad}\n` +
+                `🏢 *Şirket:* ${sirket}\n` +
+                `📞 *Telefon:* ${telefon}\n` +
+                `⏰ *Tarih:* ${new Date().toLocaleString('tr-TR')}`;
+
+  try {
+    // Telegram API'ye sessizce POST isteği atar
+    await fetch(`https://api.telegram.org/bot${BOT_TOKEN}/sendMessage`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        chat_id: CHAT_ID,
+        text: mesaj,
+        parse_mode: 'Markdown'
+      })
+    });
+  } catch (err) {
+    console.error('Telegram iletim hatası:', err);
+  }
+
+  // Telegram mesajı gitsin veya gitmesin kullanıcıyı bekletmeden PDF'i indir
+  const downloadLink = document.createElement('a');
+  downloadLink.href = 'volkan-ozel-cv.pdf';
+  downloadLink.download = 'Volkan_Ozel_CV.pdf';
+  document.body.appendChild(downloadLink);
+  downloadLink.click();
+  downloadLink.remove();
+
+  btn.innerText = 'CV İndirildi!';
+  setTimeout(() => {
+    closeCvModal();
+    btn.innerText = 'Bilgileri Gönder ve CV\'yi İndir';
+    btn.disabled = false;
+    document.getElementById('cvForm').reset();
+  }, 1200);
+}
     // Mobil Menü
     const menuBtn = document.getElementById('mobile-menu-btn');
     const mobileMenu = document.getElementById('mobile-menu');
@@ -1164,5 +1228,33 @@ async function loadPosts() {
       if (e.key === 'Escape') closeBrandModal();
     });
   </script>
+  <!-- CV Modal -->
+<div id="cvModal" class="fixed inset-0 bg-black/60 z-50 hidden flex items-center justify-center p-4 backdrop-blur-sm">
+  <div class="bg-white rounded-2xl max-w-md w-full p-6 shadow-2xl relative text-left">
+    <!-- Kapat Butonu -->
+    <button onclick="closeCvModal()" class="absolute top-4 right-4 text-gray-400 hover:text-gray-700 text-xl font-bold">&times;</button>
+    
+    <h3 class="text-xl font-bold text-[#1a1a1a] mb-1">Özgeçmişi İndir</h3>
+    <p class="text-xs text-gray-500 mb-5">Detaylı CV dosyasını görüntülemek için bilgilerinizi giriniz.</p>
+
+    <form id="cvForm" onsubmit="handleCvSubmit(event)" class="space-y-4">
+      <div>
+        <label class="block text-xs font-semibold text-gray-700 mb-1">Ad Soyad *</label>
+        <input type="text" id="cvName" required placeholder="Adınız Soyadınız" class="w-full px-3 py-2 border border-gray-200 rounded-lg text-sm focus:outline-none focus:border-red-600">
+      </div>
+      <div>
+        <label class="block text-xs font-semibold text-gray-700 mb-1">Şirket / Kurum *</label>
+        <input type="text" id="cvCompany" required placeholder="Firma Adı" class="w-full px-3 py-2 border border-gray-200 rounded-lg text-sm focus:outline-none focus:border-red-600">
+      </div>
+      <div>
+        <label class="block text-xs font-semibold text-gray-700 mb-1">Telefon Numarası *</label>
+        <input type="tel" id="cvPhone" required placeholder="05XX XXX XX XX" class="w-full px-3 py-2 border border-gray-200 rounded-lg text-sm focus:outline-none focus:border-red-600">
+      </div>
+      <button type="submit" id="cvSubmitBtn" class="w-full py-3 bg-red-600 hover:bg-red-700 text-white font-semibold rounded-lg text-sm transition">
+        Bilgileri Gönder ve CV'yi İndir
+      </button>
+    </form>
+  </div>
+</div>
 </body>
 </html>
