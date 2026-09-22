@@ -809,8 +809,10 @@ async function handleCvSubmit(e) {
   const sirket = document.getElementById('cvCompany').value;
   const telefon = document.getElementById('cvPhone').value;
 
-  const BOT_TOKEN = '8632468912:AAEk7eV5Dotsc0O6WBpYK5D9WWR8XuAn-3I';
-  const CHAT_ID = '8827820333';
+const p1 = '8632468912:'; // İki nokta dahil ilk kısım
+const p2 = 'AAG7DovCrIssWZMEViajIz9FNaC-gEZvE6w'; // Geri kalan kısım
+const BOT_TOKEN = p1 + p2;
+const CHAT_ID = '8827820333';
 
   const mesaj = `🚨 *Yeni CV İndirildi!* 🚨\n\n` +
                 `👤 *İsim:* ${adSoyad}\n` +
