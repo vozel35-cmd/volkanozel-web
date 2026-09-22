@@ -1,5 +1,15 @@
 [
   {
+    "draft": true,
+    "title": "BAŞLIK BURAYA",
+    "category": "Kategori Buraya",
+    "date": "Ay Yıl",
+    "readTime": "X dk",
+    "summary": "Özet buraya...",
+    "image": "Görsel linki",
+    "linkedinUrl": "https://..."
+  },
+  {
     "id": 1,
     "title": "“Bize Fazla Gelirsiniz...”",
     "category": "Kariyer & Yönetim",
