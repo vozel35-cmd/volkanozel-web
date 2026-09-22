@@ -954,10 +954,12 @@
     let visibleCount = 0;
     const stepSize = window.innerWidth < 768 ? 3 : 6;
 
-    async function loadPosts() {
+async function loadPosts() {
       try {
         const response = await fetch('posts.json');
-        allPosts = await response.json();
+        const rawPosts = await response.json();
+        // draft: true olan şablonları sitede gösterme, sadece yayınlanacakları al:
+        allPosts = rawPosts.filter(p => !p.draft);
         visibleCount = stepSize;
         renderPosts();
       } catch (err) {
