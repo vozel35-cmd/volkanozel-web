@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "title": "“Bize Fazla Gelirsiniz...”",
+    "category": "Kariyer & Yönetim",
+    "date": "Eylül 2026",
+    "readTime": "4 dk",
+    "summary": "İş görüşmelerinde sıkça duyulan o klasik cümle: 'Yetkinlikleriniz bizim için fazla.' Peki bu gerçekten bir övgü mü, yoksa vizyon eksikliğinin ve konfor alanını koruma refleksinin bir itirafı mı?",
+    "image": "https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&w=800&q=80",
+    "linkedinUrl": "https://www.linkedin.com/in/volkanozel/"
+  },
+  {
+    "id": 2,
+    "title": "Mağaza Rafından Kasaya: Karar Anının Nörolojisi",
+    "category": "Davranışsal İktisat",
+    "date": "Ağustos 2026",
+    "readTime": "3 dk",
+    "summary": "Müşteri satın alırken mantığıyla mı yoksa bilinçaltı dürtüleriyle mi karar verir? Doğru teşhir, reyon akışı ve satın alma reflekslerini yönetmenin saha dinamikleri.",
+    "image": "https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&w=800&q=80",
+    "linkedinUrl": "https://www.linkedin.com/in/volkanozel/"
+  },
+  {
+    "id": 3,
+    "title": "Çok Şubeli Yapılarda Standartlaşma Bir Tercih Değil, Zorunluluktur",
+    "category": "Saha Operasyonu",
+    "date": "Temmuz 2026",
+    "readTime": "4 dk",
+    "summary": "100+ şubeli perakende zincirlerinde tüm noktaların aynı hizmet standardını korumasını nasıl sağlarsınız? Saha denetimleri, prim mimarisi ve Kurumsal Akademi yapılanmasının kritik rolü.",
+    "image": "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=800&q=80",
+    "linkedinUrl": "https://www.linkedin.com/in/volkanozel/"
+  }
+]

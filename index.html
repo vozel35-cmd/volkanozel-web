@@ -1,0 +1,1129 @@
+<!DOCTYPE html>
+<html lang="tr" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <title>Volkan Özel | Satış, Pazarlama & Operasyonel Tecrübe</title>
+  <meta name="description" content="Masa başında kurulan vizyonu, sahanın gerçekleriyle ciroya ve kârlı büyümeye dönüştüren ticari tecrübe." />
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+  
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+            display: ['"Space Grotesk"', 'sans-serif'],
+          },
+          colors: {
+            executive: {
+              950: '#020617',
+              900: '#0f172a',
+              800: '#1e293b',
+              700: '#334155',
+              600: '#475569',
+              100: '#f1f5f9',
+              50: '#f8fafc',
+            },
+            crimson: {
+              DEFAULT: '#dc2626',
+              neon: '#ef4444',
+              dark: '#991b1b',
+              subtle: '#fef2f2',
+            },
+            linkedin: {
+              DEFAULT: '#0A66C2',
+              hover: '#084e96',
+              light: '#e8f3fc',
+            }
+          },
+          animation: {
+            'glow-pulse': 'glowPulse 5s ease-in-out infinite',
+            'spin-slow': 'spin 25s linear infinite',
+            'hero-float': 'heroFloat 6s ease-in-out infinite',
+            'blink': 'blink 1s infinite',
+          },
+          keyframes: {
+            glowPulse: {
+              '0%, 100%': { opacity: '0.35', transform: 'scale(1)' },
+              '50%': { opacity: '0.65', transform: 'scale(1.06)' },
+            },
+            heroFloat: {
+              '0%, 100%': { transform: 'translateY(0px)' },
+              '50%': { transform: 'translateY(-6px)' },
+            },
+            blink: { '0%, 100%': { opacity: '1' }, '50%': { opacity: '0' } }
+          }
+        }
+      }
+    }
+  </script>
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.8.1/vanilla-tilt.min.js"></script>
+  
+  <style>
+    html, body {
+      max-width: 100%;
+      overflow-x: hidden !important;
+      background-color: #f8fafc;
+    }
+    
+    .bg-light-grid {
+      background-size: 38px 38px;
+      background-image: 
+        linear-gradient(to right, rgba(15, 23, 42, 0.035) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(15, 23, 42, 0.035) 1px, transparent 1px);
+    }
+    
+    .nav-link.active {
+      color: #dc2626 !important;
+    }
+    .nav-link.active::after {
+      width: 100% !important;
+    }
+
+    @keyframes marquee {
+      0% { transform: translateX(0%); }
+      100% { transform: translateX(-50%); }
+    }
+    .animate-marquee-smooth {
+      display: flex;
+      width: max-content;
+      animation: marquee 32s linear infinite;
+    }
+    .animate-marquee-smooth:hover {
+      animation-play-state: paused;
+    }
+
+    #cursor-glow {
+      position: fixed;
+      pointer-events: none;
+      width: 460px;
+      height: 460px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(220, 38, 38, 0.05) 0%, transparent 70%);
+      transform: translate(-50%, -50%);
+      z-index: 1;
+      transition: opacity 0.3s ease;
+    }
+  </style>
+</head>
+
+<body class="text-executive-700 font-sans antialiased selection:bg-crimson selection:text-white relative bg-light-grid">
+
+  <!-- FARE IŞIĞI -->
+  <div id="cursor-glow" class="hidden md:block"></div>
+
+  <!-- SCROLL PROGRESS BAR -->
+  <div id="scroll-progress" class="fixed top-0 left-0 h-1 bg-gradient-to-r from-red-600 via-rose-500 to-amber-500 z-[70] w-0 transition-all duration-75"></div>
+
+  <!-- SAĞ ALT YÜZEN BUTON -->
+  <a 
+    id="floating-mail-btn" 
+    href="mailto:mail@volkanozel.com" 
+    class="fixed bottom-5 right-5 sm:bottom-8 sm:right-8 z-50 flex items-center gap-2.5 px-4 sm:px-5 py-3.5 rounded-full bg-crimson hover:bg-crimson-dark text-white shadow-xl shadow-red-600/30 transition-all duration-300 transform translate-y-24 opacity-0 pointer-events-none group hover:scale-105"
+    aria-label="Tanışalım"
+  >
+    <span class="relative flex h-2.5 w-2.5">
+      <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-white opacity-90"></span>
+      <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-white"></span>
+    </span>
+    <i data-lucide="handshake" class="w-5 h-5"></i>
+    <span class="text-xs sm:text-sm font-bold tracking-wider uppercase hidden sm:inline-block">Tanışalım</span>
+  </a>
+
+  <!-- NAVBAR -->
+  <header class="fixed top-0 left-0 w-full z-50 bg-white/90 backdrop-blur-xl border-b border-slate-200/80">
+    <div class="max-w-7xl mx-auto px-5 sm:px-6 h-20 flex items-center justify-between">
+      <a href="#" class="text-lg sm:text-xl font-display font-extrabold tracking-wider text-executive-900 flex items-center gap-2.5">
+        <span class="w-2.5 h-2.5 rounded-full bg-crimson inline-block shadow-sm"></span>
+        VOLKAN ÖZEL
+      </a>
+
+      <!-- Masaüstü Menü -->
+      <nav class="hidden md:flex items-center gap-8 text-xs font-bold uppercase tracking-widest text-executive-600">
+        <a href="#about" class="nav-link relative py-2 hover:text-crimson transition-colors after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-crimson after:transition-all after:duration-300">Yaklaşımım</a>
+        <a href="#brands" class="nav-link relative py-2 hover:text-crimson transition-colors after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-crimson after:transition-all after:duration-300">Sektörler</a>
+        <a href="#matrix" class="nav-link relative py-2 hover:text-crimson transition-colors after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-crimson after:transition-all after:duration-300">Yetkinliklerim</a>
+        <a href="#blog" class="nav-link relative py-2 hover:text-crimson transition-colors after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-crimson after:transition-all after:duration-300">Yazılarım</a>
+        <a href="#contact" class="px-5 py-2.5 rounded-full bg-executive-900 hover:bg-crimson text-white transition-all duration-300 shadow-sm hover:shadow-lg hover:shadow-red-500/20">Tanışalım</a>
+      </nav>
+
+      <!-- Mobil Menü Butonu -->
+      <button id="mobile-menu-btn" class="md:hidden p-2 text-executive-900 focus:outline-none" aria-label="Menü">
+        <i data-lucide="menu" class="w-6 h-6"></i>
+      </button>
+    </div>
+
+    <!-- Mobil Açılır Menü -->
+    <div id="mobile-menu" class="hidden md:hidden bg-white border-b border-slate-200 px-6 py-5 space-y-4 shadow-xl">
+      <a href="#about" class="mobile-nav-item block text-sm font-bold uppercase tracking-wider text-executive-800 hover:text-crimson">Yaklaşımım</a>
+      <a href="#brands" class="mobile-nav-item block text-sm font-bold uppercase tracking-wider text-executive-800 hover:text-crimson">Sektörler</a>
+      <a href="#matrix" class="mobile-nav-item block text-sm font-bold uppercase tracking-wider text-executive-800 hover:text-crimson">Yetkinliklerim</a>
+      <a href="#blog" class="mobile-nav-item block text-sm font-bold uppercase tracking-wider text-executive-800 hover:text-crimson">Yazılarım</a>
+      <a href="#contact" class="mobile-nav-item block w-full text-center py-3 rounded-xl bg-crimson text-white font-bold uppercase tracking-wider text-xs">Tanışalım</a>
+    </div>
+  </header>
+
+  <!-- HERO SECTION -->
+  <section class="min-h-[92vh] pt-32 pb-16 flex items-center relative overflow-hidden bg-gradient-to-b from-slate-100/60 via-transparent to-transparent">
+    <canvas id="particles-canvas" class="absolute inset-0 pointer-events-none -z-10"></canvas>
+
+    <div class="absolute top-1/4 right-5 sm:right-10 w-80 sm:w-[500px] h-80 sm:h-[500px] bg-red-100/50 rounded-full blur-[110px] -z-20 animate-glow-pulse"></div>
+    <div class="absolute bottom-10 left-5 sm:left-10 w-72 sm:w-[420px] h-72 sm:h-[420px] bg-amber-100/40 rounded-full blur-[100px] -z-20"></div>
+
+    <div class="max-w-7xl mx-auto px-5 sm:px-6 w-full relative z-10">
+      <div class="grid lg:grid-cols-12 gap-12 items-center">
+        
+        <div class="lg:col-span-7 space-y-6 text-center lg:text-left" data-aos="fade-right">
+          
+          <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-emerald-50 border border-emerald-200 text-xs font-bold text-emerald-800 tracking-wide shadow-sm">
+            <span class="relative flex h-2 w-2">
+              <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-500 opacity-75"></span>
+              <span class="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
+            </span>
+            Uygun Pozisyonlarda Değer Üretmeye Açığım
+          </div>
+          
+          <h1 class="text-3xl sm:text-5xl lg:text-6xl font-display font-extrabold text-executive-900 leading-[1.14] tracking-tight">
+            Masa başında kurulan vizyonu, sahanın gerçeğiyle <br class="hidden sm:inline"/>
+            <span class="text-transparent bg-clip-text bg-gradient-to-r from-red-600 via-rose-600 to-amber-600" id="typewriter">ciroya dönüştüren</span><span class="text-crimson font-light animate-blink">|</span> tecrübe.
+          </h1>
+
+          <p class="text-base sm:text-lg text-executive-600 max-w-2xl mx-auto lg:mx-0 font-normal leading-relaxed">
+            Ulusal ve bölgesel perakende mağazacılıkta, bayi teşkilatlarında ve çok kanallı pazarlama ekosistemlerinde tüketici psikolojisini ciroya ve kârlı büyümeye dönüştüren uygulamacı yönetim pratiği.
+          </p>
+
+          <div class="flex flex-wrap justify-center lg:justify-start items-center gap-4 pt-2">
+            <a href="mailto:mail@volkanozel.com" class="w-full sm:w-auto px-8 py-4 rounded-xl bg-crimson hover:bg-crimson-dark text-white font-bold uppercase tracking-wider text-xs transition-all flex justify-center items-center gap-2.5 shadow-xl shadow-red-500/25 hover:-translate-y-0.5">
+              <i data-lucide="handshake" class="w-4 h-4"></i>
+              Tanışalım
+            </a>
+            
+            <a href="https://www.linkedin.com/in/volkanozel/" target="_blank" rel="noopener" class="w-full sm:w-auto px-7 py-4 rounded-xl bg-linkedin hover:bg-linkedin-hover text-white font-bold uppercase tracking-wider text-xs transition-all flex justify-center items-center gap-2.5 shadow-lg shadow-linkedin/25 hover:-translate-y-0.5">
+              <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.762-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+              LinkedIn Profil
+            </a>
+          </div>
+
+          <div class="pt-2 flex flex-wrap justify-center lg:justify-start items-center gap-3 sm:gap-4 text-xs font-semibold uppercase tracking-wider text-executive-600">
+            <span class="flex items-center gap-1.5"><i data-lucide="map-pin" class="w-3.5 h-3.5 text-crimson"></i> İzmir, Türkiye</span>
+            <span class="w-1.5 h-1.5 rounded-full bg-slate-300 hidden sm:inline-block"></span>
+            <span class="flex items-center gap-1.5 text-executive-800 bg-white border border-slate-200 px-3 py-1 rounded-full shadow-sm">
+              <i data-lucide="target" class="w-3.5 h-3.5 text-crimson"></i> Türkiye Geneli Fırsatlara Açığım
+            </span>
+          </div>
+        </div>
+
+        <div class="lg:col-span-5 flex justify-center" data-aos="zoom-in">
+          <div class="animate-hero-float w-full max-w-[290px] sm:max-w-sm">
+            <div data-tilt data-tilt-max="7" class="relative rounded-3xl p-3 bg-white border border-slate-200/90 shadow-2xl group hover:border-crimson/50 transition-all duration-500 cursor-pointer">
+              
+              <div class="aspect-[4/5] rounded-2xl overflow-hidden bg-slate-100 relative shadow-inner">
+                <img src="hero-volkan.png" alt="Volkan Özel" class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-700" />
+              </div>
+              
+              <div class="p-4 text-center">
+                <h2 class="text-xl font-display font-bold text-executive-900 tracking-wide">Volkan Özel</h2>
+                <p class="text-xs text-crimson font-bold tracking-widest uppercase mt-1">
+                  Satış • Pazarlama • Operasyon
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- CANLI METRİKLER -->
+  <section class="py-16 border-y border-slate-200 bg-white relative">
+    <div class="max-w-7xl mx-auto px-5 sm:px-6">
+      <div class="grid grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
+        
+        <div class="p-6 rounded-2xl bg-slate-50 border border-slate-200/80 shadow-sm hover:shadow-xl hover:border-crimson/30 transition-all text-center group" data-aos="fade-up" data-aos-delay="100">
+          <div class="text-4xl sm:text-6xl font-display font-extrabold text-executive-900 flex items-center justify-center group-hover:scale-105 transition-transform">
+            <span class="counter" data-target="25">0</span><span class="text-crimson">+</span>
+          </div>
+          <p class="text-xs sm:text-sm font-bold uppercase tracking-widest text-slate-500 mt-2">Yıllık Yönetim</p>
+          <span class="text-[11px] text-slate-400 block mt-0.5">Saha ve Perakende Pratiği</span>
+        </div>
+
+        <div class="p-6 rounded-2xl bg-slate-50 border border-slate-200/80 shadow-sm hover:shadow-xl hover:border-crimson/30 transition-all text-center group" data-aos="fade-up" data-aos-delay="200">
+          <div class="text-4xl sm:text-6xl font-display font-extrabold text-executive-900 flex items-center justify-center group-hover:scale-105 transition-transform">
+            <span class="counter" data-target="100">0</span><span class="text-crimson">+</span>
+          </div>
+          <p class="text-xs sm:text-sm font-bold uppercase tracking-widest text-slate-500 mt-2">Şube & Mağaza Ağı</p>
+          <span class="text-[11px] text-slate-400 block mt-0.5">Zincir & Bayi Organizasyonu</span>
+        </div>
+
+        <div class="p-6 rounded-2xl bg-slate-50 border border-slate-200/80 shadow-sm hover:shadow-xl hover:border-crimson/30 transition-all text-center group" data-aos="fade-up" data-aos-delay="300">
+          <div class="text-4xl sm:text-6xl font-display font-extrabold text-executive-900 flex items-center justify-center group-hover:scale-105 transition-transform">
+            <span class="counter" data-target="6">0</span><span class="text-crimson">X</span>
+          </div>
+          <p class="text-xs sm:text-sm font-bold uppercase tracking-widest text-slate-500 mt-2">Farklı Sektör Disiplini</p>
+          <span class="text-[11px] text-slate-400 block mt-0.5">İlaç, Perakende, Mobilya, Finans</span>
+        </div>
+
+        <div class="p-6 rounded-2xl bg-slate-50 border border-slate-200/80 shadow-sm hover:shadow-xl hover:border-crimson/30 transition-all text-center group" data-aos="fade-up" data-aos-delay="400">
+          <div class="text-4xl sm:text-6xl font-display font-extrabold text-executive-900 flex items-center justify-center group-hover:scale-105 transition-transform">
+            <span class="counter" data-target="100">0</span><span class="text-crimson">%</span>
+          </div>
+          <p class="text-xs sm:text-sm font-bold uppercase tracking-widest text-slate-500 mt-2">Satış & Pazarlama Odaklı</p>
+          <span class="text-[11px] text-slate-400 block mt-0.5">Sonuç ve İcraat Odaklılık</span>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- MOTİVASYON 1: LAO TZU -->
+  <section class="py-16 sm:py-24 relative overflow-hidden border-b border-slate-200">
+    <div class="absolute inset-0 bg-cover bg-center scale-105" style="background-image: url('https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=1600&q=80');"></div>
+    <div class="absolute inset-0 bg-slate-950/75 backdrop-blur-[1px]"></div>
+    
+    <div class="max-w-4xl mx-auto px-5 sm:px-6 relative z-10 text-center" data-aos="zoom-out-up">
+      <div class="inline-flex items-center justify-center w-12 h-12 rounded-2xl bg-white/10 border border-white/20 text-crimson mb-4 shadow-lg">
+        <i data-lucide="compass" class="w-6 h-6 animate-spin-slow"></i>
+      </div>
+      <blockquote class="text-2xl sm:text-4xl font-display font-extrabold text-white leading-snug tracking-tight drop-shadow-md">
+        “Binlerce kilometrelik yolculuklar tek bir adımla başlar.”
+      </blockquote>
+      <div class="flex items-center justify-center gap-3 pt-4">
+        <span class="w-8 h-0.5 bg-crimson"></span>
+        <p class="text-xs sm:text-sm font-bold uppercase tracking-widest text-slate-300">Lao Tzu</p>
+        <span class="w-8 h-0.5 bg-crimson"></span>
+      </div>
+    </div>
+  </section>
+
+  <!-- SEKTÖRLER -->
+  <section id="brands" class="py-12 border-b border-slate-200 bg-white relative overflow-hidden">
+    <div class="max-w-7xl mx-auto px-5 sm:px-6 mb-8 text-center" data-aos="fade-up">
+      <p class="text-xs font-bold uppercase tracking-widest text-slate-400">Yönetsel Tecrübe ve Değer Katılan Markalar</p>
+    </div>
+
+    <div class="relative w-full overflow-hidden">
+      <div class="absolute left-0 top-0 bottom-0 w-16 sm:w-32 bg-gradient-to-r from-white to-transparent z-10 pointer-events-none"></div>
+      <div class="absolute right-0 top-0 bottom-0 w-16 sm:w-32 bg-gradient-to-l from-white to-transparent z-10 pointer-events-none"></div>
+
+      <div class="animate-marquee-smooth py-2">
+        <div class="flex gap-6 shrink-0 px-3">
+          
+          <button type="button" onclick="openBrandModal('alfemo')" class="w-64 p-5 rounded-2xl border border-slate-200 bg-slate-50/70 hover:bg-white hover:border-crimson hover:shadow-xl transition-all flex flex-col items-center justify-center text-center gap-2.5 group cursor-pointer">
+            <div class="h-12 w-12 rounded-xl bg-white border border-slate-200 p-2 flex items-center justify-center shadow-sm group-hover:scale-105 transition-transform">
+              <img src="https://t2.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https://alfemo.com.tr&size=128" alt="ALFEMO" class="h-8 w-8 object-contain" />
+            </div>
+            <div>
+              <span class="font-display font-bold text-executive-900 text-base block group-hover:text-crimson transition-colors">ALFEMO</span>
+              <span class="text-xs text-slate-400 font-medium block mt-0.5 group-hover:text-crimson transition-colors">Mobilya & Perakende Zinciri</span>
+            </div>
+          </button>
+
+          <button type="button" onclick="openBrandModal('ilko')" class="w-64 p-5 rounded-2xl border border-slate-200 bg-slate-50/70 hover:bg-white hover:border-crimson hover:shadow-xl transition-all flex flex-col items-center justify-center text-center gap-2.5 group cursor-pointer">
+            <div class="h-12 w-12 rounded-xl bg-white border border-slate-200 p-2 flex items-center justify-center shadow-sm group-hover:scale-105 transition-transform">
+              <img src="https://t2.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https://ilko.com.tr&size=128" alt="İLKO İlaç" class="h-8 w-8 object-contain" />
+            </div>
+            <div>
+              <span class="font-display font-bold text-executive-900 text-base block group-hover:text-crimson transition-colors">İLKO İLAÇ</span>
+              <span class="text-xs text-slate-400 font-medium block mt-0.5 group-hover:text-crimson transition-colors">İlaç Sanayi & Bölge Satış</span>
+            </div>
+          </button>
+
+          <button type="button" onclick="openBrandModal('abdi')" class="w-64 p-5 rounded-2xl border border-slate-200 bg-slate-50/70 hover:bg-white hover:border-crimson hover:shadow-xl transition-all flex flex-col items-center justify-center text-center gap-2.5 group cursor-pointer">
+            <div class="h-12 w-12 rounded-xl bg-white border border-slate-200 p-2 flex items-center justify-center shadow-sm group-hover:scale-105 transition-transform">
+              <img src="https://t2.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https://abdiibrahim.com.tr&size=128" alt="Abdi İbrahim" class="h-8 w-8 object-contain" />
+            </div>
+            <div>
+              <span class="font-display font-bold text-executive-900 text-base block group-hover:text-crimson transition-colors">ABDİ İBRAHİM</span>
+              <span class="text-xs text-slate-400 font-medium block mt-0.5 group-hover:text-crimson transition-colors">İlaç Sanayi & Bölge Satış</span>
+            </div>
+          </button>
+
+          <button type="button" onclick="openBrandModal('duymer')" class="w-64 p-5 rounded-2xl border border-slate-200 bg-slate-50/70 hover:bg-white hover:border-crimson hover:shadow-xl transition-all flex flex-col items-center justify-center text-center gap-2.5 group cursor-pointer">
+            <div class="h-12 w-12 rounded-xl bg-white border border-slate-200 p-2 flex items-center justify-center shadow-sm group-hover:scale-105 transition-transform">
+              <img src="https://t2.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https://duymer.com.tr&size=128" alt="DUYMER" class="h-8 w-8 object-contain" />
+            </div>
+            <div>
+              <span class="font-display font-bold text-executive-900 text-base block group-hover:text-crimson transition-colors">DUYMER</span>
+              <span class="text-xs text-slate-400 font-medium block mt-0.5 group-hover:text-crimson transition-colors">Sağlık & Medikal Perakende</span>
+            </div>
+          </button>
+
+          <button type="button" onclick="openBrandModal('intergo')" class="w-64 p-5 rounded-2xl border border-slate-200 bg-slate-50/70 hover:bg-white hover:border-crimson hover:shadow-xl transition-all flex flex-col items-center justify-center text-center gap-2.5 group cursor-pointer">
+            <div class="h-12 w-12 rounded-xl bg-white border border-slate-200 p-2 flex items-center justify-center shadow-sm group-hover:scale-105 transition-transform">
+              <img src="https://t2.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https://intergo.com.tr&size=128" alt="interGO" class="h-8 w-8 object-contain" />
+            </div>
+            <div>
+              <span class="font-display font-bold text-executive-900 text-base block group-hover:text-crimson transition-colors">interGO</span>
+              <span class="text-xs text-slate-400 font-medium block mt-0.5 group-hover:text-crimson transition-colors">Mobilya & E-Ticaret</span>
+            </div>
+          </button>
+
+          <button type="button" onclick="openBrandModal('isbank')" class="w-64 p-5 rounded-2xl border border-slate-200 bg-slate-50/70 hover:bg-white hover:border-crimson hover:shadow-xl transition-all flex flex-col items-center justify-center text-center gap-2.5 group cursor-pointer">
+            <div class="h-12 w-12 rounded-xl bg-white border border-slate-200 p-2 flex items-center justify-center shadow-sm group-hover:scale-105 transition-transform">
+              <img src="https://t2.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https://isbank.com.tr&size=128" alt="İş Bankası" class="h-8 w-8 object-contain" />
+            </div>
+            <div>
+              <span class="font-display font-bold text-executive-900 text-base block group-hover:text-crimson transition-colors">İŞ BANKASI</span>
+              <span class="text-xs text-slate-400 font-medium block mt-0.5 group-hover:text-crimson transition-colors">Finans & Bankacılık</span>
+            </div>
+          </button>
+
+        </div>
+
+        <div class="flex gap-6 shrink-0 px-3" aria-hidden="true">
+          <button type="button" onclick="openBrandModal('alfemo')" class="w-64 p-5 rounded-2xl border border-slate-200 bg-slate-50/70 hover:bg-white hover:border-crimson hover:shadow-xl transition-all flex flex-col items-center justify-center text-center gap-2.5 group cursor-pointer">
+            <div class="h-12 w-12 rounded-xl bg-white border border-slate-200 p-2 flex items-center justify-center shadow-sm group-hover:scale-105 transition-transform">
+              <img src="https://t2.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https://alfemo.com.tr&size=128" alt="ALFEMO" class="h-8 w-8 object-contain" />
+            </div>
+            <div>
+              <span class="font-display font-bold text-executive-900 text-base block group-hover:text-crimson transition-colors">ALFEMO</span>
+              <span class="text-xs text-slate-400 font-medium block mt-0.5 group-hover:text-crimson transition-colors">Mobilya & Perakende Zinciri</span>
+            </div>
+          </button>
+
+          <button type="button" onclick="openBrandModal('ilko')" class="w-64 p-5 rounded-2xl border border-slate-200 bg-slate-50/70 hover:bg-white hover:border-crimson hover:shadow-xl transition-all flex flex-col items-center justify-center text-center gap-2.5 group cursor-pointer">
+            <div class="h-12 w-12 rounded-xl bg-white border border-slate-200 p-2 flex items-center justify-center shadow-sm group-hover:scale-105 transition-transform">
+              <img src="https://t2.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https://ilko.com.tr&size=128" alt="İLKO İlaç" class="h-8 w-8 object-contain" />
+            </div>
+            <div>
+              <span class="font-display font-bold text-executive-900 text-base block group-hover:text-crimson transition-colors">İLKO İLAÇ</span>
+              <span class="text-xs text-slate-400 font-medium block mt-0.5 group-hover:text-crimson transition-colors">İlaç Sanayi & Bölge Satış</span>
+            </div>
+          </button>
+
+          <button type="button" onclick="openBrandModal('abdi')" class="w-64 p-5 rounded-2xl border border-slate-200 bg-slate-50/70 hover:bg-white hover:border-crimson hover:shadow-xl transition-all flex flex-col items-center justify-center text-center gap-2.5 group cursor-pointer">
+            <div class="h-12 w-12 rounded-xl bg-white border border-slate-200 p-2 flex items-center justify-center shadow-sm group-hover:scale-105 transition-transform">
+              <img src="https://t2.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https://abdiibrahim.com.tr&size=128" alt="Abdi İbrahim" class="h-8 w-8 object-contain" />
+            </div>
+            <div>
+              <span class="font-display font-bold text-executive-900 text-base block group-hover:text-crimson transition-colors">ABDİ İBRAHİM</span>
+              <span class="text-xs text-slate-400 font-medium block mt-0.5 group-hover:text-crimson transition-colors">İlaç Sanayi & Bölge Satış</span>
+            </div>
+          </button>
+
+          <button type="button" onclick="openBrandModal('duymer')" class="w-64 p-5 rounded-2xl border border-slate-200 bg-slate-50/70 hover:bg-white hover:border-crimson hover:shadow-xl transition-all flex flex-col items-center justify-center text-center gap-2.5 group cursor-pointer">
+            <div class="h-12 w-12 rounded-xl bg-white border border-slate-200 p-2 flex items-center justify-center shadow-sm group-hover:scale-105 transition-transform">
+              <img src="https://t2.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https://duymer.com.tr&size=128" alt="DUYMER" class="h-8 w-8 object-contain" />
+            </div>
+            <div>
+              <span class="font-display font-bold text-executive-900 text-base block group-hover:text-crimson transition-colors">DUYMER</span>
+              <span class="text-xs text-slate-400 font-medium block mt-0.5 group-hover:text-crimson transition-colors">Sağlık & Medikal Perakende</span>
+            </div>
+          </button>
+
+          <button type="button" onclick="openBrandModal('intergo')" class="w-64 p-5 rounded-2xl border border-slate-200 bg-slate-50/70 hover:bg-white hover:border-crimson hover:shadow-xl transition-all flex flex-col items-center justify-center text-center gap-2.5 group cursor-pointer">
+            <div class="h-12 w-12 rounded-xl bg-white border border-slate-200 p-2 flex items-center justify-center shadow-sm group-hover:scale-105 transition-transform">
+              <img src="https://t2.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https://intergo.com.tr&size=128" alt="interGO" class="h-8 w-8 object-contain" />
+            </div>
+            <div>
+              <span class="font-display font-bold text-executive-900 text-base block group-hover:text-crimson transition-colors">interGO</span>
+              <span class="text-xs text-slate-400 font-medium block mt-0.5 group-hover:text-crimson transition-colors">Mobilya & E-Ticaret</span>
+            </div>
+          </button>
+
+          <button type="button" onclick="openBrandModal('isbank')" class="w-64 p-5 rounded-2xl border border-slate-200 bg-slate-50/70 hover:bg-white hover:border-crimson hover:shadow-xl transition-all flex flex-col items-center justify-center text-center gap-2.5 group cursor-pointer">
+            <div class="h-12 w-12 rounded-xl bg-white border border-slate-200 p-2 flex items-center justify-center shadow-sm group-hover:scale-105 transition-transform">
+              <img src="https://t2.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https://isbank.com.tr&size=128" alt="İş Bankası" class="h-8 w-8 object-contain" />
+            </div>
+            <div>
+              <span class="font-display font-bold text-executive-900 text-base block group-hover:text-crimson transition-colors">İŞ BANKASI</span>
+              <span class="text-xs text-slate-400 font-medium block mt-0.5 group-hover:text-crimson transition-colors">Finans & Bankacılık</span>
+            </div>
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- YAKLAŞIMIM -->
+  <section id="about" class="py-14 max-w-6xl mx-auto px-5 sm:px-6">
+    <div class="p-8 sm:p-12 rounded-3xl bg-white border border-slate-200 shadow-sm relative overflow-hidden" data-aos="fade-up">
+      
+      <div class="flex items-center gap-2.5 text-xs font-bold uppercase tracking-widest text-crimson mb-4">
+        <span class="w-5 h-0.5 bg-crimson"></span> Yaklaşımım
+      </div>
+
+      <div class="grid lg:grid-cols-12 gap-8 items-start">
+        <div class="lg:col-span-7 space-y-4">
+          <h2 class="text-2xl sm:text-3xl font-display font-bold text-executive-900 leading-snug">
+            Saha refleksi, insan odaklı yönetim ve analitik disiplin birleştiğinde gerçek büyüme sağlanır.
+          </h2>
+          <p class="text-executive-600 text-sm sm:text-base leading-relaxed">
+            Ulusal ve bölgesel perakende mağazacılıkta, franchise bayi teşkilatlarında ve çok kanallı (omnichannel) satış ekosistemlerinde uzun yıllara dayanan ticari yönetim tecrübesine sahibim.
+          </p>
+          <p class="text-executive-600 text-sm sm:text-base leading-relaxed">
+            Davranışsal iktisat prensiplerini ve tüketici karar mekanizmalarını perakende dinamikleriyle birleştiren uçtan uca satış mimarileri kurgularım. Çoklu şube yapılarında periyodik saha denetimleri ve operasyonel kontrol mekanizmalarıyla tavizsiz bir hizmet standardizasyonu sağlarken; satış kadrolarını ikna, algı ve müşteri psikolojisine odaklayan kurumsal akademi yapılanmalarıyla yüksek performanslı ekiplere dönüştürürüm.
+          </p>
+          <p class="text-executive-600 text-sm sm:text-base leading-relaxed font-medium text-executive-800">
+            Sahadan gelen içgörüleri ölçülebilir ciro artışına, kârlı büyüme modellerine ve sürdürülebilir pazar payına dönüştüren entegre ticari sistemler kurarım.
+          </p>
+        </div>
+
+        <div class="lg:col-span-5 bg-slate-50 p-6 rounded-2xl border border-slate-200 shadow-sm space-y-3">
+          <p class="text-xs font-bold uppercase tracking-wider text-executive-900 border-b border-slate-200 pb-2">
+            Temel Yönetim ve İcra Alanları
+          </p>
+          <ul class="space-y-2.5 text-xs sm:text-sm text-executive-700">
+            <li class="flex items-start gap-2">
+              <i data-lucide="check-circle-2" class="w-4 h-4 text-crimson shrink-0 mt-0.5"></i>
+              <span>Perakende Mağazacılık & Bölgesel/Ulusal Satış Ağı Yönetimi</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <i data-lucide="check-circle-2" class="w-4 h-4 text-crimson shrink-0 mt-0.5"></i>
+              <span>Davranışsal İktisat & Tüketici Odaklı Satış Mimarisi</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <i data-lucide="check-circle-2" class="w-4 h-4 text-crimson shrink-0 mt-0.5"></i>
+              <span>Perakende Standartlaşması & Saha Denetim Mekanizmaları</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <i data-lucide="check-circle-2" class="w-4 h-4 text-crimson shrink-0 mt-0.5"></i>
+              <span>Kurumsal Satış Akademisi, Performans & Prim Mimarisi</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <i data-lucide="check-circle-2" class="w-4 h-4 text-crimson shrink-0 mt-0.5"></i>
+              <span>Çok Kanallı (Omnichannel) Büyüme & Pazar Yeri Operasyonları</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <i data-lucide="check-circle-2" class="w-4 h-4 text-crimson shrink-0 mt-0.5"></i>
+              <span>Kategori Konumlandırma, Marka Yönetimi & Lansman Stratejisi</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- MOTİVASYON 2: VIDAL SASSOON -->
+  <section class="py-20 sm:py-28 relative overflow-hidden border-y border-slate-800 bg-executive-900 text-white">
+    <div class="absolute inset-0 bg-cover bg-center scale-105" style="background-image: url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1600&q=80');"></div>
+    <div class="absolute inset-0 bg-slate-950/80 backdrop-blur-[1px]"></div>
+    
+    <div class="max-w-4xl mx-auto px-5 sm:px-6 relative z-10 text-center" data-aos="zoom-out-up">
+      <div class="inline-flex items-center justify-center w-12 h-12 rounded-2xl bg-white/10 border border-white/20 text-crimson mb-4 shadow-lg">
+        <i data-lucide="zap" class="w-6 h-6 animate-pulse"></i>
+      </div>
+      <blockquote class="text-2xl sm:text-4xl font-display font-extrabold text-white leading-snug tracking-tight">
+        “Başarının çalışmadan önce geldiği tek yer sözlüktür.”
+      </blockquote>
+      <div class="flex items-center justify-center gap-3 pt-4">
+        <span class="w-8 h-0.5 bg-crimson"></span>
+        <p class="text-xs sm:text-sm font-bold uppercase tracking-widest text-slate-300">Vidal Sassoon</p>
+        <span class="w-8 h-0.5 bg-crimson"></span>
+      </div>
+    </div>
+  </section>
+
+  <!-- YETKİNLİKLERİM (8 KART) -->
+  <section id="matrix" class="py-24 border-b border-slate-200 relative">
+    <div class="max-w-7xl mx-auto px-5 sm:px-6">
+      
+      <div class="text-center max-w-2xl mx-auto mb-16" data-aos="fade-up">
+        <span class="text-xs font-bold uppercase tracking-widest text-crimson block mb-2">Uzmanlık Alanlarım</span>
+        <h2 class="text-3xl sm:text-5xl font-display font-extrabold text-executive-900 tracking-tight">Yetkinliklerim</h2>
+        <p class="text-sm text-executive-600 mt-2">Saha gerçekleriyle şekillenen, ciro ve operasyonel verimlilik odaklı temel çalışma alanlarım.</p>
+      </div>
+
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        
+        <div class="h-[380px] rounded-3xl relative overflow-hidden border border-slate-200 bg-white group shadow-sm hover:shadow-2xl transition-all duration-500 hover:border-crimson hover:-translate-y-1.5" data-aos="fade-up" data-aos-delay="50">
+          <img src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&w=800&q=80" alt="Perakende" class="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 opacity-25 group-hover:opacity-40" />
+          <div class="absolute inset-0 bg-gradient-to-t from-executive-950 via-executive-900/60 to-transparent"></div>
+          <div class="absolute top-5 left-5">
+            <span class="px-3.5 py-1 rounded-full bg-white text-xs font-bold text-executive-900 shadow-sm">01</span>
+          </div>
+          <div class="absolute bottom-0 left-0 w-full p-6 space-y-1.5">
+            <span class="text-[11px] font-bold uppercase tracking-widest text-red-400 block">Şube & Mağazacılık</span>
+            <h3 class="text-lg font-display font-bold text-white">Perakende & Satış Ağı Yönetimi</h3>
+            <p class="text-xs text-slate-300 leading-relaxed">100+ şubeli zincir mağazacılıkta bütçe, ciro hedefleri ve operasyonel saha koordinasyonu.</p>
+          </div>
+        </div>
+
+        <div class="h-[380px] rounded-3xl relative overflow-hidden border border-slate-200 bg-white group shadow-sm hover:shadow-2xl transition-all duration-500 hover:border-crimson hover:-translate-y-1.5" data-aos="fade-up" data-aos-delay="100">
+          <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=800&q=80" alt="Davranışsal İktisat" class="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 opacity-25 group-hover:opacity-40" />
+          <div class="absolute inset-0 bg-gradient-to-t from-executive-950 via-executive-900/60 to-transparent"></div>
+          <div class="absolute top-5 left-5">
+            <span class="px-3.5 py-1 rounded-full bg-white text-xs font-bold text-executive-900 shadow-sm">02</span>
+          </div>
+          <div class="absolute bottom-0 left-0 w-full p-6 space-y-1.5">
+            <span class="text-[11px] font-bold uppercase tracking-widest text-red-400 block">Tüketici Psikolojisi</span>
+            <h3 class="text-lg font-display font-bold text-white">Davranışsal Satış Mimarisi</h3>
+            <p class="text-xs text-slate-300 leading-relaxed">Tüketici karar mekanizmalarını analiz ederek satın alma reflekslerini hızlandıran ticari kurgular.</p>
+          </div>
+        </div>
+
+        <div class="h-[380px] rounded-3xl relative overflow-hidden border border-slate-200 bg-white group shadow-sm hover:shadow-2xl transition-all duration-500 hover:border-crimson hover:-translate-y-1.5" data-aos="fade-up" data-aos-delay="150">
+          <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=800&q=80" alt="Akademi" class="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 opacity-25 group-hover:opacity-40" />
+          <div class="absolute inset-0 bg-gradient-to-t from-executive-950 via-executive-900/60 to-transparent"></div>
+          <div class="absolute top-5 left-5">
+            <span class="px-3.5 py-1 rounded-full bg-white text-xs font-bold text-executive-900 shadow-sm">03</span>
+          </div>
+          <div class="absolute bottom-0 left-0 w-full p-6 space-y-1.5">
+            <span class="text-[11px] font-bold uppercase tracking-widest text-red-400 block">İkna & Prim Modelleri</span>
+            <h3 class="text-lg font-display font-bold text-white">Satış Akademisi & Prim Sistemleri</h3>
+            <p class="text-xs text-slate-300 leading-relaxed">Saha ekiplerine yönelik algı ve ürün eğitimleri; motivasyonu tetikleyen performans prim kurguları.</p>
+          </div>
+        </div>
+
+        <div class="h-[380px] rounded-3xl relative overflow-hidden border border-slate-200 bg-white group shadow-sm hover:shadow-2xl transition-all duration-500 hover:border-crimson hover:-translate-y-1.5" data-aos="fade-up" data-aos-delay="200">
+          <img src="https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&w=800&q=80" alt="Denetim" class="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 opacity-25 group-hover:opacity-40" />
+          <div class="absolute inset-0 bg-gradient-to-t from-executive-950 via-executive-900/60 to-transparent"></div>
+          <div class="absolute top-5 left-5">
+            <span class="px-3.5 py-1 rounded-full bg-white text-xs font-bold text-executive-900 shadow-sm">04</span>
+          </div>
+          <div class="absolute bottom-0 left-0 w-full p-6 space-y-1.5">
+            <span class="text-[11px] font-bold uppercase tracking-widest text-red-400 block">Saha Kontrolü</span>
+            <h3 class="text-lg font-display font-bold text-white">Standartlaşma & Saha Denetimleri</h3>
+            <p class="text-xs text-slate-300 leading-relaxed">Şubeler ve bayiler genelinde kesintisiz müşteri memnuniyeti ve kurumsal hizmet standartları.</p>
+          </div>
+        </div>
+
+        <div class="h-[380px] rounded-3xl relative overflow-hidden border border-slate-200 bg-white group shadow-sm hover:shadow-2xl transition-all duration-500 hover:border-crimson hover:-translate-y-1.5" data-aos="fade-up" data-aos-delay="250">
+          <img src="https://images.unsplash.com/photo-1556740738-b6a63e27c4df?auto=format&fit=crop&w=800&q=80" alt="Omnichannel Ticaret" class="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 opacity-25 group-hover:opacity-40" />
+          <div class="absolute inset-0 bg-gradient-to-t from-executive-950 via-executive-900/60 to-transparent"></div>
+          <div class="absolute top-5 left-5">
+            <span class="px-3.5 py-1 rounded-full bg-white text-xs font-bold text-executive-900 shadow-sm">05</span>
+          </div>
+          <div class="absolute bottom-0 left-0 w-full p-6 space-y-1.5">
+            <span class="text-[11px] font-bold uppercase tracking-widest text-red-400 block">E-Ticaret & Fiziksel Mağaza</span>
+            <h3 class="text-lg font-display font-bold text-white">Çok Kanallı (Omnichannel) Büyüme</h3>
+            <p class="text-xs text-slate-300 leading-relaxed">Fiziksel perakende noktaları ile dijital pazar yerlerinin senkronize, tek merkezden yönetimi.</p>
+          </div>
+        </div>
+
+        <div class="h-[380px] rounded-3xl relative overflow-hidden border border-slate-200 bg-white group shadow-sm hover:shadow-2xl transition-all duration-500 hover:border-crimson hover:-translate-y-1.5" data-aos="fade-up" data-aos-delay="300">
+          <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80" alt="Lansman" class="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 opacity-25 group-hover:opacity-40" />
+          <div class="absolute inset-0 bg-gradient-to-t from-executive-950 via-executive-900/60 to-transparent"></div>
+          <div class="absolute top-5 left-5">
+            <span class="px-3.5 py-1 rounded-full bg-white text-xs font-bold text-executive-900 shadow-sm">06</span>
+          </div>
+          <div class="absolute bottom-0 left-0 w-full p-6 space-y-1.5">
+            <span class="text-[11px] font-bold uppercase tracking-widest text-red-400 block">Ürün & Pazarlama</span>
+            <h3 class="text-lg font-display font-bold text-white">Kategori & Lansman Stratejisi</h3>
+            <p class="text-xs text-slate-300 leading-relaxed">Ürün gamı kurgusu, rekabetçi fiyatlandırma ve tüketiciyle güçlü bağ kuran pazarlama lansmanları.</p>
+          </div>
+        </div>
+
+        <div class="h-[380px] rounded-3xl relative overflow-hidden border border-slate-200 bg-white group shadow-sm hover:shadow-2xl transition-all duration-500 hover:border-crimson hover:-translate-y-1.5" data-aos="fade-up" data-aos-delay="350">
+          <img src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=800&q=80" alt="Bayi" class="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 opacity-25 group-hover:opacity-40" />
+          <div class="absolute inset-0 bg-gradient-to-t from-executive-950 via-executive-900/60 to-transparent"></div>
+          <div class="absolute top-5 left-5">
+            <span class="px-3.5 py-1 rounded-full bg-white text-xs font-bold text-executive-900 shadow-sm">07</span>
+          </div>
+          <div class="absolute bottom-0 left-0 w-full p-6 space-y-1.5">
+            <span class="text-[11px] font-bold uppercase tracking-widest text-red-400 block">Kanal Yönetimi</span>
+            <h3 class="text-lg font-display font-bold text-white">Franchise & Bayi Teşkilatı</h3>
+            <p class="text-xs text-slate-300 leading-relaxed">Bayi kârlılığını gözeten ticari modeller, kanal çatışmalarını önleyen adil ve şeffaf satış politikaları.</p>
+          </div>
+        </div>
+
+        <div class="h-[380px] rounded-3xl relative overflow-hidden border border-slate-200 bg-white group shadow-sm hover:shadow-2xl transition-all duration-500 hover:border-crimson hover:-translate-y-1.5" data-aos="fade-up" data-aos-delay="400">
+          <img src="https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?auto=format&fit=crop&w=800&q=80" alt="Finans Disiplini" class="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 opacity-25 group-hover:opacity-40" />
+          <div class="absolute inset-0 bg-gradient-to-t from-executive-950 via-executive-900/60 to-transparent"></div>
+          <div class="absolute top-5 left-5">
+            <span class="px-3.5 py-1 rounded-full bg-white text-xs font-bold text-executive-900 shadow-sm">08</span>
+          </div>
+          <div class="absolute bottom-0 left-0 w-full p-6 space-y-1.5">
+            <span class="text-[11px] font-bold uppercase tracking-widest text-red-400 block">P&L & Finansal Disiplin</span>
+            <h3 class="text-lg font-display font-bold text-white">Kârlılık & Bütçe Yönetimi</h3>
+            <p class="text-xs text-slate-300 leading-relaxed">Riskten arındırılmış nakit akışı, doğru stok devir hızı ve dengeli P&L (Kâr/Zarar) yönetimi.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= YAZILARIM / BLOG BÖLÜMÜ (posts.json Entegre) ================= -->
+  <section id="blog" class="py-24 bg-slate-50 border-b border-slate-200 relative">
+    <div class="max-w-7xl mx-auto px-5 sm:px-6">
+      
+      <div class="flex flex-col md:flex-row md:items-end justify-between mb-14" data-aos="fade-up">
+        <div>
+          <div class="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-crimson mb-2">
+            <span class="w-5 h-0.5 bg-crimson"></span> Düşünce & Saha Notları
+          </div>
+          <h2 class="text-3xl sm:text-5xl font-display font-extrabold text-executive-900 tracking-tight">
+            Yazılarım & LinkedIn Paylaşımları
+          </h2>
+          <p class="text-sm text-executive-600 mt-2 max-w-xl">
+            Saha yönetimi, perakende mimarisi ve tüketici psikolojisine dair LinkedIn yazılarım.
+          </p>
+        </div>
+        
+        <a href="https://www.linkedin.com/in/volkanozel/recent-activity/all/" target="_blank" rel="noopener" class="mt-4 md:mt-0 inline-flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-linkedin hover:text-linkedin-hover transition-colors">
+          <span>Tüm LinkedIn Akışı</span>
+          <i data-lucide="arrow-up-right" class="w-4 h-4"></i>
+        </a>
+      </div>
+
+      <!-- posts.json İÇERİĞİNİN DİNAMİK YÜKLENDİĞİ IZGARA -->
+      <div id="blog-container" class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+        <!-- JS ile doldurulacak -->
+      </div>
+
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" class="py-24 bg-white border-t border-slate-200 relative overflow-hidden">
+    <div class="max-w-3xl mx-auto px-5 sm:px-6 text-center space-y-6 sm:space-y-7 relative z-10" data-aos="zoom-in">
+      
+      <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-crimson-subtle border border-red-200 text-xs font-bold uppercase tracking-widest text-crimson shadow-sm">
+        <span class="w-2 h-2 rounded-full bg-crimson animate-ping"></span>
+        İletişim & Yeni Fırsatlar
+      </div>
+
+      <h2 class="text-2xl sm:text-4xl font-display font-extrabold text-executive-900 tracking-tight leading-snug">
+        Şirketinizin ihtiyaç duyduğu pozisyonlarda, katkı sağlamak ve değer üretmek için yeni fırsatlara açığım.
+      </h2>
+      
+      <p class="text-executive-600 text-sm sm:text-base max-w-xl mx-auto leading-relaxed">
+        Üst düzey temsiliyet, satış yönetimi, kurumsal ticari dönüşümler veya pazarlama yapılanmaları ve markanızın ihtiyaç duyabileceği iş modelleri için doğrudan mesaj gönderebilir veya benimle LinkedIn üzerinden hızlı bağlantı kurabilirsiniz.
+      </p>
+
+      <div class="pt-4 flex flex-col sm:flex-row justify-center items-center gap-4">
+        <a href="mailto:mail@volkanozel.com" class="w-full sm:w-auto px-9 py-4 rounded-xl bg-crimson hover:bg-crimson-dark text-white font-bold uppercase tracking-wider text-xs transition-all flex justify-center items-center gap-3 shadow-xl shadow-red-500/25 hover:scale-105">
+          <i data-lucide="handshake" class="w-5 h-5"></i>
+          Tanışalım
+        </a>
+        
+        <a href="https://www.linkedin.com/in/volkanozel/" target="_blank" rel="noopener" class="w-full sm:w-auto px-9 py-4 rounded-xl bg-linkedin hover:bg-linkedin-hover text-white font-bold uppercase tracking-wider text-xs transition-all flex justify-center items-center gap-3 hover:scale-105 shadow-lg shadow-linkedin/25">
+          <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.762-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+          LinkedIn Bağlantısı
+        </a>
+      </div>
+
+      <div class="pt-8 flex flex-wrap items-center justify-center gap-3 text-xs text-slate-500 font-medium">
+        <span class="flex items-center gap-1.5"><i data-lucide="map-pin" class="w-4 h-4 text-crimson"></i> İzmir, Türkiye</span>
+        <span class="w-1.5 h-1.5 rounded-full bg-slate-300"></span>
+        <span class="flex items-center gap-1.5 text-executive-800 font-semibold"><i data-lucide="target" class="w-4 h-4 text-crimson"></i> Türkiye Geneli Fırsatlara Açığım</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="py-8 bg-white border-t border-slate-200 text-center text-xs text-slate-500">
+    <p>© 2026 Volkan Özel — www.volkanozel.com</p>
+  </footer>
+
+  <!-- ================= CV MARKA DETAY MODAL'I ================= -->
+  <div id="brand-modal" class="fixed inset-0 z-[100] hidden items-center justify-center p-4 sm:p-6 bg-slate-950/80 backdrop-blur-md transition-all duration-300">
+    <div class="relative w-full max-w-2xl rounded-3xl bg-white border border-slate-200 shadow-2xl p-6 sm:p-8 overflow-hidden transform scale-95 transition-transform duration-300" id="brand-modal-content">
+      
+      <button onclick="closeBrandModal()" class="absolute top-5 right-5 p-2 rounded-full bg-slate-100 hover:bg-slate-200 text-slate-600 hover:text-slate-900 transition-colors" aria-label="Kapat">
+        <i data-lucide="x" class="w-5 h-5"></i>
+      </button>
+
+      <div class="flex items-center gap-4 border-b border-slate-100 pb-5">
+        <div class="w-14 h-14 rounded-2xl bg-slate-50 border border-slate-200 p-2.5 flex items-center justify-center shrink-0 shadow-sm">
+          <img id="modal-logo" src="" alt="" class="h-9 w-9 object-contain" />
+        </div>
+        <div>
+          <div class="flex items-center gap-2 flex-wrap">
+            <h3 id="modal-brand-name" class="text-xl sm:text-2xl font-display font-extrabold text-executive-900">Marka</h3>
+            <span id="modal-period" class="px-2.5 py-0.5 rounded-full bg-slate-100 text-slate-600 text-[11px] font-semibold">Tarih</span>
+          </div>
+          <p id="modal-role" class="text-sm font-bold text-crimson mt-0.5">Pozisyon</p>
+        </div>
+      </div>
+
+      <div class="py-5 space-y-3 max-h-[50vh] overflow-y-auto pr-2">
+        <p class="text-xs font-bold uppercase tracking-wider text-slate-400">İcraat ve Sorumluluk Kapsamı</p>
+        <ul id="modal-bullets" class="space-y-2.5 text-xs sm:text-sm text-executive-700 leading-relaxed">
+        </ul>
+      </div>
+
+      <div class="pt-5 border-t border-slate-100 flex flex-wrap items-center justify-between gap-3">
+        <a id="modal-website-btn" href="#" target="_blank" rel="noopener" class="px-4 py-2.5 rounded-xl bg-slate-100 hover:bg-slate-200 text-executive-800 font-semibold text-xs transition-colors flex items-center gap-2">
+          <i data-lucide="globe" class="w-4 h-4 text-slate-500"></i>
+          <span>Şirket Web Sitesi</span>
+          <i data-lucide="external-link" class="w-3 h-3 text-slate-400"></i>
+        </a>
+
+        <div class="flex items-center gap-2 w-full sm:w-auto">
+          <a href="mailto:mail@volkanozel.com" class="flex-1 sm:flex-initial px-4 py-2.5 rounded-xl bg-crimson hover:bg-crimson-dark text-white font-semibold text-xs transition-colors flex items-center justify-center gap-2 shadow-sm">
+            <i data-lucide="handshake" class="w-4 h-4"></i>
+            <span>Tanışalım</span>
+          </a>
+          
+          <a href="https://www.linkedin.com/in/volkanozel/" target="_blank" rel="noopener" class="px-4 py-2.5 rounded-xl bg-linkedin hover:bg-linkedin-hover text-white font-semibold text-xs transition-colors flex items-center justify-center gap-2 shadow-sm" title="LinkedIn Profili">
+            <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.762-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+            <span>LinkedIn</span>
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- SCRIPTS -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init({ duration: 800, once: true, easing: 'ease-out-cubic' });
+    lucide.createIcons();
+
+    // Mobil Menü
+    const menuBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    menuBtn.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
+    document.querySelectorAll('.mobile-nav-item').forEach(item => {
+      item.addEventListener('click', () => mobileMenu.classList.add('hidden'));
+    });
+
+    // 3D Tilt
+    if (window.innerWidth > 768) {
+      VanillaTilt.init(document.querySelectorAll("[data-tilt]"));
+      const glow = document.getElementById('cursor-glow');
+      window.addEventListener('mousemove', (e) => {
+        glow.style.left = e.clientX + 'px';
+        glow.style.top = e.clientY + 'px';
+      });
+    }
+
+    // Daktilo Efekti
+    const typeWords = ["ciroya dönüştüren", "kârlı büyümeye çeviren", "saha başarısına taşıyan", "pazar payını artıran"];
+    let tIndex = 0, charIndex = 0, isDeleting = false;
+    const typeEl = document.getElementById('typewriter');
+
+    function typeEffect() {
+      const currentWord = typeWords[tIndex];
+      if (isDeleting) {
+        typeEl.textContent = currentWord.substring(0, charIndex - 1);
+        charIndex--;
+      } else {
+        typeEl.textContent = currentWord.substring(0, charIndex + 1);
+        charIndex++;
+      }
+
+      let typeSpeed = isDeleting ? 40 : 80;
+      if (!isDeleting && charIndex === currentWord.length) {
+        typeSpeed = 2200;
+        isDeleting = true;
+      } else if (isDeleting && charIndex === 0) {
+        isDeleting = false;
+        tIndex = (tIndex + 1) % typeWords.length;
+        typeSpeed = 400;
+      }
+      setTimeout(typeEffect, typeSpeed);
+    }
+    typeEffect();
+
+    // SAYAÇLAR
+    const counters = document.querySelectorAll('.counter');
+    const counterObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const counter = entry.target;
+          const target = +counter.getAttribute('data-target');
+          const duration = 1800;
+          const startTime = performance.now();
+
+          const updateCounter = (currentTime) => {
+            const elapsed = currentTime - startTime;
+            const progress = Math.min(elapsed / duration, 1);
+            const easeOut = 1 - Math.pow(1 - progress, 3);
+            const currentVal = Math.floor(easeOut * target);
+
+            counter.innerText = currentVal;
+
+            if (progress < 1) {
+              requestAnimationFrame(updateCounter);
+            } else {
+              counter.innerText = target;
+            }
+          };
+
+          requestAnimationFrame(updateCounter);
+          counterObserver.unobserve(counter);
+        }
+      });
+    }, { threshold: 0.3 });
+
+    counters.forEach(c => counterObserver.observe(c));
+
+    // Parçacık Ağı (Canvas)
+    const canvas = document.getElementById('particles-canvas');
+    const ctx = canvas.getContext('2d');
+    let width, height, particles = [];
+
+    function resize() {
+      width = canvas.width = window.innerWidth;
+      height = canvas.height = canvas.parentElement.offsetHeight;
+    }
+    window.addEventListener('resize', resize);
+    resize();
+
+    class Particle {
+      constructor() {
+        this.x = Math.random() * width;
+        this.y = Math.random() * height;
+        this.vx = (Math.random() - 0.5) * 0.6;
+        this.vy = (Math.random() - 0.5) * 0.6;
+        this.radius = Math.random() * 1.5 + 0.6;
+      }
+      update() {
+        this.x += this.vx;
+        this.y += this.vy;
+        if (this.x < 0 || this.x > width) this.vx *= -1;
+        if (this.y < 0 || this.y > height) this.vy *= -1;
+      }
+      draw() {
+        ctx.beginPath();
+        ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
+        ctx.fillStyle = 'rgba(220, 38, 38, 0.25)';
+        ctx.fill();
+      }
+    }
+
+    const pCount = window.innerWidth < 768 ? 16 : 40;
+    for (let i = 0; i < pCount; i++) particles.push(new Particle());
+
+    function animateParticles() {
+      ctx.clearRect(0, 0, width, height);
+      for (let i = 0; i < particles.length; i++) {
+        particles[i].update();
+        particles[i].draw();
+        for (let j = i + 1; j < particles.length; j++) {
+          const dx = particles[i].x - particles[j].x;
+          const dy = particles[i].y - particles[j].y;
+          const dist = Math.sqrt(dx * dx + dy * dy);
+          if (dist < 110) {
+            ctx.beginPath();
+            ctx.moveTo(particles[i].x, particles[i].y);
+            ctx.lineTo(particles[j].x, particles[j].y);
+            ctx.strokeStyle = `rgba(15, 23, 42, ${0.07 * (1 - dist / 110)})`;
+            ctx.lineWidth = 0.7;
+            ctx.stroke();
+          }
+        }
+      }
+      requestAnimationFrame(animateParticles);
+    }
+    animateParticles();
+
+    // Scroll İzleyici
+    const floatingMailBtn = document.getElementById('floating-mail-btn');
+    window.addEventListener('scroll', () => {
+      const winScroll = document.documentElement.scrollTop;
+      const h = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+      document.getElementById('scroll-progress').style.width = ((winScroll / h) * 100) + '%';
+      
+      let current = '';
+      document.querySelectorAll('section[id]').forEach(sec => {
+        if (pageYOffset >= (sec.offsetTop - 140)) current = sec.getAttribute('id');
+      });
+      document.querySelectorAll('.nav-link').forEach(link => {
+        link.classList.remove('active');
+        if (link.getAttribute('href') === '#' + current) link.classList.add('active');
+      });
+
+      if (window.scrollY > 280) {
+        floatingMailBtn.classList.remove('translate-y-24', 'opacity-0', 'pointer-events-none');
+        floatingMailBtn.classList.add('translate-y-0', 'opacity-100', 'pointer-events-auto');
+      } else {
+        floatingMailBtn.classList.add('translate-y-24', 'opacity-0', 'pointer-events-none');
+        floatingMailBtn.classList.remove('translate-y-0', 'opacity-100', 'pointer-events-auto');
+      }
+    });
+
+    // ================= POSTS.JSON VERİ ÇEKME FONKSİYONU =================
+    async function loadPosts() {
+      try {
+        const response = await fetch('posts.json');
+        const posts = await response.json();
+        const container = document.getElementById('blog-container');
+        container.innerHTML = '';
+
+        posts.forEach((post, index) => {
+          const card = document.createElement('article');
+          card.className = 'bg-white rounded-3xl border border-slate-200/90 shadow-sm hover:shadow-xl hover:border-crimson/40 transition-all flex flex-col justify-between overflow-hidden group';
+          card.setAttribute('data-aos', 'fade-up');
+          card.setAttribute('data-aos-delay', (index * 100).toString());
+
+          card.innerHTML = `
+            <div>
+              <div class="aspect-video w-full overflow-hidden bg-slate-100 relative">
+                <img src="${post.image}" alt="${post.title}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                <span class="absolute top-4 left-4 px-3 py-1 rounded-full bg-white/90 backdrop-blur-md text-executive-900 font-bold text-[11px] shadow-sm">
+                  ${post.category}
+                </span>
+              </div>
+
+              <div class="p-6 sm:p-7 space-y-3">
+                <div class="flex items-center justify-between text-xs text-slate-400">
+                  <span>${post.date}</span>
+                  <span>${post.readTime} okuma</span>
+                </div>
+
+                <h3 class="text-xl font-display font-bold text-executive-900 group-hover:text-crimson transition-colors leading-snug">
+                  ${post.title}
+                </h3>
+                
+                <p class="text-xs sm:text-sm text-executive-600 leading-relaxed line-clamp-3">
+                  ${post.summary}
+                </p>
+              </div>
+            </div>
+
+            <div class="px-6 sm:px-7 py-4 bg-slate-50/60 border-t border-slate-100 flex items-center justify-between">
+              <a href="${post.linkedinUrl}" target="_blank" rel="noopener" class="text-xs font-bold text-linkedin hover:text-linkedin-hover flex items-center gap-1.5 transition-colors">
+                <svg class="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.762-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                LinkedIn'de Oku & Tartış
+              </a>
+              <i data-lucide="arrow-right" class="w-4 h-4 text-slate-400 group-hover:text-crimson group-hover:translate-x-1 transition-all"></i>
+            </div>
+          `;
+          container.appendChild(card);
+        });
+
+        lucide.createIcons();
+      } catch (err) {
+        console.error('Yazılar yüklenirken hata oluştu:', err);
+      }
+    }
+    loadPosts();
+
+    // CV MODAL VERİTABANI
+    const brandCVData = {
+      alfemo: {
+        name: "ALFEMO A.Ş.",
+        role: "Perakende Pazarlama Müdürü",
+        period: "Haziran 2013 - Ağustos 2016",
+        logo: "https://t2.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https://alfemo.com.tr&size=128",
+        url: "https://www.alfemo.com.tr",
+        bullets: [
+          "Türkiye ve KKTC genelinde 132 franchise mağazadan oluşan perakende zincirinin ticari operasyonları ve mağazacılık standartlarının yürütülmesi.",
+          "Mağaza cirolarının takibiyle satış artırıcı yerel/bölgesel pazarlama kampanyalarının, iş geliştirme projelerinin ve ortak pazarlama (co-marketing) bütçelerinin yönetilmesi.",
+          "100'ü aşkın franchise yatırımcısının katıldığı bayi toplantılarının yönetimi ve 200 kişilik saha satış teşkilatının dönemsel eğitim, hedef ve motivasyon organizasyonlarının koordine edilmesi.",
+          "Düzenli bölge ve şube ziyaretleriyle mağaza içi eğitimlerin verilmesi, görsel düzenleme (VM) ve kurumsal konsept denetimlerinin sahada standartlaştırılması."
+        ]
+      },
+      ilko: {
+        name: "İLKO İlaç",
+        role: "Bölge Yöneticisi / Yönetmeni",
+        period: "Ağustos 2019 - Aralık 2021",
+        logo: "https://t2.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https://ilko.com.tr&size=128",
+        url: "https://www.ilko.com.tr",
+        bullets: [
+          "İlaç sektörünün yüksek regülasyonlu pazarında, stratejik öneme sahip Merkezi Sinir Sistemi (MSS) portföyünün bölge satış hedeflerinin (KPI) realize edilmesi ve pazar bulunurluğunun lider konuma taşınması.",
+          "Hekimler, eczacılar, ecza depoları ve kilit sağlık profesyonelleriyle yüksek güvene dayalı kurumsal ticari ilişkilerin yürütülmesi.",
+          "Bölgesel pazar dinamiklerinin analizi doğrultusunda dönemsel satış geliştirme ve penetrasyon projelerinin hayata geçirilmesi.",
+          "Sıkı regülasyonlara tabi sektör standartlarında bütçe yönetimi, saha veri analitiği ve üst yönetime düzenli performans raporlaması."
+        ]
+      },
+      abdi: {
+        name: "ABDİ İBRAHİM İlaç A.Ş.",
+        role: "Bölge Sorumlusu",
+        period: "Nisan 2011 - Mayıs 2013",
+        logo: "https://t2.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https://abdiibrahim.com.tr&size=128",
+        url: "https://www.abdiibrahim.com.tr",
+        bullets: [
+          "Sorumluluk sahasında yer alan stratejik ürün portföyünün satış hedefleri, pazar payı ve bölge penetrasyonunun yönetilmesi.",
+          "Sorumlu olunan bölgede periyodik pazar payı, ciro ve ürün bulunabilirlik hedeflerinin (KPI) istikrarlı bir şekilde realize edilmesi.",
+          "Sergilenen yüksek saha performansı, analitik yaklaşım ve ticari sonuçlar neticesinde Ürün Müdürlüğü (Junior Product Manager) liderlik değerlendirme havuzuna seçilerek ilgili stratejik yönetim programının başarıyla tamamlanması.",
+          "Sağlık profesyonelleri, eczaneler ve dağıtım kanallarıyla uzun vadeli, kurumsal ve etik iş ilişkilerinin yürütülmesi."
+        ]
+      },
+      duymer: {
+        name: "DUYMER İşitme Cihazları (BAZ GROUP)",
+        role: "Satış Pazarlama Genel Müdür Yardımcısı",
+        period: "Haziran 2024 - Mayıs 2025",
+        logo: "https://t2.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https://duymer.com.tr&size=128",
+        url: "https://www.duymer.com.tr",
+        bullets: [
+          "Türkiye genelinde 130 şube ile sektör lideri olan perakende ağının kurumsal konsept, teşhir ve hizmet standartlarının tek bir çatı altında standartlaştırılması.",
+          "Şube satış ekiplerinin yetkinliklerini artıran 'Kurumsal Akademi' yapısının kurulması; ciro ve kârlılığı artıran hedef odaklı prim/ödüllendirme sistemlerinin tasarlanması.",
+          "Şirketin yıllık satış-pazarlama bütçelerinin oluşturulması, kâr-zarar (P&L) dengesinin takibi ve üst yönetime düzenli stratejik performans raporlamalarının sunulması.",
+          "Büyüyen şube ağına paralel olarak satış ve pazarlama kadrolarının yeniden yapılandırılması, görev tanımları ve organizasyon şemasının optimize edilmesi."
+        ]
+      },
+      intergo: {
+        name: "interGO Mobilya (E-Ticaret / Perakende)",
+        role: "Satış Pazarlama Genel Müdür Yardımcısı",
+        period: "2022 - 2026",
+        logo: "https://t2.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https://intergo.com.tr&size=128",
+        url: "https://www.intergo.com.tr",
+        bullets: [
+          "35 mavi yaka üretim personeli ve 15 beyaz yaka operasyonel yöneticiden oluşan toplam 50 kişilik entegre ekibin sevk ve idaresi.",
+          "Yurt içi ve yurt dışı majör pazar yerlerinde kategori liderliği, görünürlük ve satış hacmini artıran bütünleşik pazarlama stratejilerinin kurgulanması.",
+          "Hammadde tedarikinden paketleme ve son kullanıcı teslimatına kadar tedarik zinciri optimizasyonu ve termin sürelerinin iyileştirilmesi.",
+          "Kâr-zarar (P&L) bütçelemesi ve dinamik fiyatlandırma stratejileriyle operasyonel kârlılığın sürdürülebilir kılınması."
+        ]
+      },
+      isbank: {
+        name: "Türkiye İş Bankası A.Ş.",
+        role: "Bireysel Bankacılık Yetkilisi",
+        period: "Ocak 2010 - Mart 2011",
+        logo: "https://t2.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https://isbank.com.tr&size=128",
+        url: "https://www.isbank.com.tr",
+        bullets: [
+          "Kurumsal finansal disiplin, kredi değerlendirme ve risk analitiği prensipleri doğrultusunda şube portföy yönetimi.",
+          "Finansal ürünlerin satış hedefleri doğrultusunda müşteri ilişkilerinin, kredi tahsis süreçlerinin ve kârlılığın takibi."
+        ]
+      }
+    };
+
+    const modal = document.getElementById('brand-modal');
+    const modalContent = document.getElementById('brand-modal-content');
+
+    function openBrandModal(key) {
+      const data = brandCVData[key];
+      if (!data) return;
+
+      document.getElementById('modal-brand-name').innerText = data.name;
+      document.getElementById('modal-role').innerText = data.role;
+      document.getElementById('modal-period').innerText = data.period;
+      document.getElementById('modal-logo').src = data.logo;
+      document.getElementById('modal-website-btn').href = data.url;
+
+      const bulletsContainer = document.getElementById('modal-bullets');
+      bulletsContainer.innerHTML = '';
+      data.bullets.forEach(b => {
+        const li = document.createElement('li');
+        li.className = 'flex items-start gap-2.5';
+        li.innerHTML = `<i data-lucide="check-circle" class="w-4 h-4 text-crimson shrink-0 mt-1"></i><span>${b}</span>`;
+        bulletsContainer.appendChild(li);
+      });
+
+      lucide.createIcons();
+      modal.classList.remove('hidden');
+      modal.classList.add('flex');
+      document.body.style.overflow = 'hidden';
+
+      setTimeout(() => {
+        modalContent.classList.remove('scale-95');
+        modalContent.classList.add('scale-100');
+      }, 20);
+    }
+
+    function closeBrandModal() {
+      modalContent.classList.remove('scale-100');
+      modalContent.classList.add('scale-95');
+      setTimeout(() => {
+        modal.classList.add('hidden');
+        modal.classList.remove('flex');
+        document.body.style.overflow = 'auto';
+      }, 150);
+    }
+
+    modal.addEventListener('click', (e) => {
+      if (e.target === modal) closeBrandModal();
+    });
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') closeBrandModal();
+    });
+  </script>
+</body>
+</html>
